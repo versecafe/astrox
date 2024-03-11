@@ -1,0 +1,31 @@
+{
+  "name": "astrox",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev:frontend": "astro dev",
+    "dev:backend": "cargo watch -x run",
+    "start": "cargo run --release",
+    "build": "astro check && astro build && cargo build --release",
+    "format": "prettier --write '**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}' && cargo fmt",
+    "lint": "cargo clippy",
+    "launch": "pnpm build && pnpm start",
+    "astro": "astro"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.5.6",
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^4.4.15",
+    "prettier-plugin-astro": "^0.13.0",
+    "prettier-plugin-tailwindcss": "^0.5.12",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.4.2"
+  },
+  "dependencies": {
+    "@astrojs/react": "^3.0.10",
+    "@types/react": "^18.2.64",
+    "@types/react-dom": "^18.2.21",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
