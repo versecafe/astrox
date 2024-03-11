@@ -11,6 +11,7 @@ A rust driven axum served platform for linking high performance statically gener
 - [x] Rust Linting
 - [ ] Web Linting
 - [x] Interactive Islands (React)
+- [x] Absolute Imports for Astro + TSX `@/*`
 
 ## Development
 
