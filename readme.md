@@ -1,3 +1,5 @@
+<img width="1212" alt="image" src="https://github.com/versecafe/astrox/assets/147033096/0186e187-5f3f-44a0-8234-e5030d34d3e2">
+
 # Astrox
 
 A rust driven axum served platform for linking high performance statically generated astro sites to a rust API for extremely light weight and high performance web applications on constrained systems. The base implementation of this project uses around 2 MB of memory
