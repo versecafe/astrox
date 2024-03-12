@@ -7,6 +7,7 @@ export function DisplayServerTime(): JSX.Element {
     const intervalId = setInterval(async () => {
       try {
         const response = await fetch('http://localhost:3000/api/time/')
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- we trust the server for the example
         const data: { current: string } = await response.json()
         setServerTime(data.current)
       } catch (error) {

@@ -7,9 +7,8 @@ A rust driven axum served platform for linking high performance statically gener
 - [x] Rust Axum API
 - [x] Astro Static Site Generation
 - [x] Tailwind CSS Styling
-- [x] Formatters
-- [x] Rust Linting
-- [ ] Web Linting
+- [x] Formatters (Rust + Web)
+- [x] Linting (Rust + Web)
 - [x] Interactive Islands (React)
 - [x] Absolute Imports for Astro + TSX `@/*`
 
