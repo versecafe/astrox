@@ -1,4 +1,5 @@
-<img width="1212" alt="image" src="https://github.com/versecafe/astrox/assets/147033096/0186e187-5f3f-44a0-8234-e5030d34d3e2">
+<img width="1245" alt="image" src="https://github.com/versecafe/astrox/assets/147033096/197107a3-1abc-4c05-86d0-429431388c5d">
+
 
 # Astrox
 
