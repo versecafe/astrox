@@ -12,11 +12,74 @@ const { title } = Astro.props
     <meta charset="UTF-8" />
     <meta name="description" content="Axum driven astro" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/_static/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
   <body>
+    <div class="main"><div class="content"></div></div>
     <slot />
   </body>
 </html>
+
+<style>
+  /*
+    Note: The styles for this gradient grid background are heavily inspired by
+    Paco & Rauno's amazing CMDK site (https://cmdk.paco.me) – all credits go to them!
+  */
+
+  .main {
+    width: 100vw;
+    min-height: 100vh;
+    position: fixed;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    padding: 120px 24px 160px 24px;
+    pointer-events: none;
+  }
+
+  .main:before {
+    background: radial-gradient(
+      circle at center,
+      #fafafa 0,
+      #fafafa 35%,
+      rgba(2, 0, 36, 0) 100%
+    );
+    position: absolute;
+    content: '';
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    top: 0;
+  }
+
+  .main:after {
+    content: '';
+    background-image: url('/_static/grid.svg');
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    opacity: 0.7;
+    filter: invert(1);
+  }
+
+  .content {
+    height: fit-content;
+    z-index: 3;
+    width: 100%;
+    background-image: radial-gradient(at 0% 0%, #ef4444 0px, transparent 50%),
+      radial-gradient(at 100% 0%, #14b8a6 0px, transparent 50%),
+      radial-gradient(at 0% 100%, #ef4444 0px, transparent 50%),
+      radial-gradient(at 100% 100%, #14b8a6 0px, transparent 50%);
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    filter: blur(100px) saturate(150%);
+    top: 80px;
+    opacity: 0.15;
+  }
+</style>
