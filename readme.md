@@ -1,6 +1,5 @@
 <img width="1245" alt="image" src="https://github.com/versecafe/astrox/assets/147033096/197107a3-1abc-4c05-86d0-429431388c5d">
 
-
 # Astrox
 
 A rust driven axum served platform for linking high performance statically generated astro sites to a rust API for extremely light weight and high performance web applications on constrained systems. The base implementation of this project uses around 2 MB of memory
@@ -10,10 +9,11 @@ A rust driven axum served platform for linking high performance statically gener
 - [x] Rust Axum API
 - [x] Astro Static Site Generation
 - [x] Tailwind CSS Styling
-- [x] Formatters (Rust + Web)
-- [x] Linting (Rust + Web)
+- [x] Formatters (Cargo fmt + Prettier)
+- [x] Linting (Clippy + EsLint)
 - [x] Interactive Islands (React)
 - [x] Absolute Imports for Astro + TSX `@/*`
+- [x] Response Caching
 
 ## Development
 
