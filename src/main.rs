@@ -37,10 +37,8 @@ async fn main() {
                 Ok(mut res) => match res.status() {
                     StatusCode::OK => {
                         if uri.path().contains("/_astro/") || uri.path().contains("/_static/") {
-                            res.headers_mut().insert(
-                                "Cache-Control",
-                                "public, max-age=31536000".parse().unwrap(),
-                            );
+                            res.headers_mut()
+                                .insert("Cache-Control", "public, max-age=36000".parse().unwrap());
                         }
                         Ok(res)
                     }
