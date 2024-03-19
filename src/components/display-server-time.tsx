@@ -4,7 +4,7 @@ export function DisplayServerTime(): JSX.Element {
   const [serverTime, setServerTime] = React.useState<string>('')
 
   React.useEffect(() => {
-    const intervalId = setInterval(async () => {
+    async function fetchServerTime() {
       try {
         const response = await fetch('http://localhost:3000/api/time/')
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- we trust the server here
@@ -13,7 +13,13 @@ export function DisplayServerTime(): JSX.Element {
       } catch (error) {
         console.error('Failed to fetch server time:', error)
       }
-    }, 1000)
+    }
+
+    fetchServerTime().catch((error) =>
+      console.error('Failed to fetch server time:', error),
+    )
+
+    const intervalId = setInterval(fetchServerTime, 1000)
 
     return () => clearInterval(intervalId)
   }, [])
