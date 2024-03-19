@@ -9,6 +9,7 @@ use axum::{
 };
 use dotenv::dotenv;
 use tower::util::ServiceExt;
+use tower_http::compression::CompressionLayer;
 use tower_http::services::ServeDir;
 
 #[tokio::main(flavor = "current_thread")]
@@ -22,6 +23,8 @@ async fn main() {
 
     let public_path = std::env!("CARGO_MANIFEST_DIR").to_owned() + "/dist";
     let fallback_service = ServeDir::new(public_path).append_index_html_on_directories(true);
+
+    let comression_layer: CompressionLayer = CompressionLayer::new().gzip(true);
 
     let app = Router::new()
         .fallback(get(|req: Request| async move {
@@ -49,6 +52,7 @@ async fn main() {
                 }
             }
         }))
+        .layer(comression_layer)
         .route("/api/time/", get(get_time));
 
     let listener = tokio::net::TcpListener::bind(api_host).await.unwrap();
