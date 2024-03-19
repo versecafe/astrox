@@ -36,9 +36,19 @@ async fn main() {
             match fallback_service.oneshot(req).await {
                 Ok(mut res) => match res.status() {
                     StatusCode::OK => {
-                        if uri.path().contains("/_astro/") || uri.path().contains("/_static/") {
-                            res.headers_mut()
-                                .insert("Cache-Control", "public, max-age=36000".parse().unwrap());
+                        if uri.path().contains("/_static/") {
+                            res.headers_mut().insert(
+                                "Cache-Control",
+                                // One year cache
+                                "public, max-age=31536000".parse().unwrap(),
+                            );
+                        }
+                        if uri.path().contains("/_astro/") {
+                            res.headers_mut().insert(
+                                "Cache-Control",
+                                // One month cache
+                                "public, max-age=2628000".parse().unwrap(),
+                            );
                         }
                         Ok(res)
                     }
