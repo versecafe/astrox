@@ -44,3 +44,7 @@ A rust driven axum served platform for linking high performance statically gener
 ### Quick Launch
 
 - `pnpm launch` - Build and start the production server
+
+## Environment Variables
+
+- `PUBLIC_HOST` - The public host of the server, this will throw a warning if not set but should still function on the fallback `localhost:3000`

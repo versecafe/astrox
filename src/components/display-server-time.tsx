@@ -6,7 +6,9 @@ export function DisplayServerTime(): JSX.Element {
   React.useEffect(() => {
     async function fetchServerTime() {
       try {
-        const response = await fetch('http://localhost:3000/api/time/')
+        const response = await fetch(
+          `http://${import.meta.env.PUBLIC_HOST ?? 'localhost:3000'}/api/time/`,
+        )
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- we trust the server here
         const data: [{ message: string }] = await response.json()
         setServerTime(data[0].message)

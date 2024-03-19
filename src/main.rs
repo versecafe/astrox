@@ -7,11 +7,19 @@ use axum::{
     routing::get,
     RequestPartsExt, Router,
 };
+use dotenv::dotenv;
 use tower::util::ServiceExt;
 use tower_http::services::ServeDir;
 
 #[tokio::main(flavor = "current_thread")]
 async fn main() {
+    dotenv().ok();
+
+    let api_host = std::env::var("PUBLIC_HOST").unwrap_or_else(|_| {
+        println!("\x1b[38;2;217;194;140mWarning\x1b[0m PUBLIC_HOST not set in .env, using localhost:3000 as default");
+        "localhost:3000".to_string()
+    });
+
     let public_path = std::env!("CARGO_MANIFEST_DIR").to_owned() + "/dist";
     let fallback_service = ServeDir::new(public_path).append_index_html_on_directories(true);
 
@@ -43,6 +51,6 @@ async fn main() {
         }))
         .route("/api/time/", get(get_time));
 
-    let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
+    let listener = tokio::net::TcpListener::bind(api_host).await.unwrap();
     axum::serve(listener, app).await.unwrap();
 }
