@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-export function DisplayServerTime(): JSX.Element {
+export function DisplayServerTime(): React.JSX.Element {
   const [serverTime, setServerTime] = React.useState<string>('')
 
   React.useEffect(() => {

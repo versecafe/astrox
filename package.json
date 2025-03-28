@@ -13,25 +13,25 @@
     "astro": "astro"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.5.10",
-    "@astrojs/tailwind": "^5.1.0",
-    "@typescript-eslint/eslint-plugin": "^7.6.0",
-    "@typescript-eslint/parser": "^7.6.0",
-    "astro": "^4.6.1",
-    "eslint": "^8.57.0",
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/tailwind": "^5.1.5",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "astro": "^5.5.5",
+    "eslint": "^8.57.1",
     "eslint-plugin-astro": "^0.34.0",
     "eslint-plugin-only-warn": "^1.1.0",
-    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react": "^7.37.4",
     "prettier-plugin-astro": "^0.13.0",
-    "prettier-plugin-tailwindcss": "^0.5.13",
-    "tailwindcss": "^3.4.3",
-    "typescript": "^5.4.5"
+    "prettier-plugin-tailwindcss": "^0.5.14",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.8.2"
   },
   "dependencies": {
-    "@astrojs/react": "^3.3.0",
-    "@types/react": "^18.2.78",
-    "@types/react-dom": "^18.2.25",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "@astrojs/react": "^4.2.2",
+    "@types/react": "^19.0.12",
+    "@types/react-dom": "^19.0.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   }
 }
