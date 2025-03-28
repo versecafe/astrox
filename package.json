@@ -9,7 +9,7 @@
     "build": "astro check && astro build && cargo build --release",
     "format": "prettier --write '**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}' && cargo fmt",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx,astro}' && cargo clippy",
-    "launch": "pnpm build && pnpm start",
+    "launch": "bun run build && bun start",
     "astro": "astro"
   },
   "devDependencies": {

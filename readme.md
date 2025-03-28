@@ -21,29 +21,29 @@ A rust driven axum served platform for linking high performance statically gener
 
 - [Rust](https://www.rust-lang.org/tools/install)
 - [Node.js](https://nodejs.org/en/download/)
-- [PNPM](https://pnpm.io/installation)
+- [bun](https://bun.sh/installation)
 
 ### Dev Mode
 
-- `pnpm dev:frontend` - Start the frontend astro server on port 4321
-- `pnpm dev:backend` - Start the backend axum server on port 3000
+- `bun dev:frontend` - Start the frontend astro server on port 4321
+- `bun dev:backend` - Start the backend axum server on port 3000
 
 ### Production Build
 
-- `pnpm build` - Build the frontend astro site, and the backend axum server
+- `bun build` - Build the frontend astro site, and the backend axum server
 
 ### Run Production
 
-- `pnpm start` - Start the production server on port 3000 serving the astro site and running the axum server for routes under `/api/`
+- `bun start` - Start the production server on port 3000 serving the astro site and running the axum server for routes under `/api/`
 
 ### Linting & Formatting
 
-- `pnpm lint` - Lint the rust code, web code linting coming soon
-- `pnpm format` - Format the rust and web code
+- `bun lint` - Lint the rust code, web code linting coming soon
+- `bun format` - Format the rust and web code
 
 ### Quick Launch
 
-- `pnpm launch` - Build and start the production server
+- `bun launch` - Build and start the production server
 
 ## Environment Variables
 
